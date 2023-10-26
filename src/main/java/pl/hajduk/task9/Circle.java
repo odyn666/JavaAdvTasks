@@ -41,10 +41,7 @@ public class Circle implements Movable {
 
     @Override
     public void move(MoveDirection moveDirection) {
-        double newX = center.getX() + moveDirection.getX();
-        double newY = center.getY() + moveDirection.getY();
-        center.setX(newX);
-        center.setY(newY);
-        point = new Point2D(newX + getRadius(), newY);
+       center.move(moveDirection);
+       point.move(moveDirection);
     }
 }
