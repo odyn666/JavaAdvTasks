@@ -1,5 +1,6 @@
 package pl.hajduk.task9;
 
+import lombok.Getter;
 import pl.hajduk.task10.Movable;
 import pl.hajduk.task10.MoveDirection;
 
@@ -12,8 +13,10 @@ import pl.hajduk.task10.MoveDirection;
 //• pole okręgu przy wywołaniu metody double getArea()
 //• (trudniejsze) trzy punkty na okręgu co 90 stopni od punktu podanego przy wywołaniu metody List getSlicePoints()
 public class Circle implements Movable {
-    Point2D center;
-    Point2D point;
+    @Getter
+    private final Point2D center;
+    @Getter
+    private Point2D point;
 
     public Circle(Point2D center, Point2D point) {
 
@@ -21,24 +24,27 @@ public class Circle implements Movable {
         this.point = point;
     }
 
-    double getRadius() {
+    public double getRadius() {
         double dx = center.getX() - point.getX();
         double dy = center.getY() - point.getY();
         return Math.sqrt(dx * dx + dy * dy);
     }
 
-    double getPerimeter() {
+    public double getPerimeter() {
         return 2 * Math.PI * getRadius();
 
     }
 
-    double getArea() {
+    public double getArea() {
         return Math.PI * (getRadius() * getRadius());
     }
 
     @Override
     public void move(MoveDirection moveDirection) {
-        center.move(moveDirection);
-        point.move(moveDirection);
+        double newX = center.getX() + moveDirection.getX();
+        double newY = center.getY() + moveDirection.getY();
+        center.setX(newX);
+        center.setY(newY);
+        point = new Point2D(newX + getRadius(), newY);
     }
 }
