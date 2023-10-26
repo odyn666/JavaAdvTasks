@@ -1,7 +1,7 @@
 package pl.hajduk.task9;
 
-import java.util.ArrayList;
-import java.util.List;
+import pl.hajduk.task10.Movable;
+import pl.hajduk.task10.MoveDirection;
 
 //Następnie stwórz klasę Circle, która będzie
 // miała konstruktor: Circle(Point2D center, Point2D point)
@@ -11,14 +11,14 @@ import java.util.List;
 //• obwód okręgu przy wywołaniu metody double getPerimeter()
 //• pole okręgu przy wywołaniu metody double getArea()
 //• (trudniejsze) trzy punkty na okręgu co 90 stopni od punktu podanego przy wywołaniu metody List getSlicePoints()
-public class Circle {
+public class Circle implements Movable {
     Point2D center;
     Point2D point;
 
     public Circle(Point2D center, Point2D point) {
 
-        this.center=center;
-        this.point=point;
+        this.center = center;
+        this.point = point;
     }
 
     double getRadius() {
@@ -28,11 +28,17 @@ public class Circle {
     }
 
     double getPerimeter() {
-        return 2*Math.PI*getRadius();
+        return 2 * Math.PI * getRadius();
 
     }
 
     double getArea() {
-        return Math.PI*(getRadius()*getRadius());
+        return Math.PI * (getRadius() * getRadius());
+    }
+
+    @Override
+    public void move(MoveDirection moveDirection) {
+        center.move(moveDirection);
+        point.move(moveDirection);
     }
 }
