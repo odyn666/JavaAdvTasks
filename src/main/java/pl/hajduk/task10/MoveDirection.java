@@ -6,8 +6,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class MoveDirection {
-    double x;
-    double y;
+    private double x;
+    private double y;
 
     public MoveDirection(double x, double y) {
         this.x = x;
