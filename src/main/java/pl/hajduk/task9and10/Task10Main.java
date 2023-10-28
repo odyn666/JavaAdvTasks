@@ -1,7 +1,4 @@
-package pl.hajduk.task10;
-
-import pl.hajduk.task9.Circle;
-import pl.hajduk.task9.Point2D;
+package pl.hajduk.task9and10;
 
 public class Task10Main {
 

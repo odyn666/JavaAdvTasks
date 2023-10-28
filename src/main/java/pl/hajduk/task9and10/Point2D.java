@@ -1,9 +1,7 @@
-package pl.hajduk.task9;
+package pl.hajduk.task9and10;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.hajduk.task10.Movable;
-import pl.hajduk.task10.MoveDirection;
 
 @Getter
 @Setter

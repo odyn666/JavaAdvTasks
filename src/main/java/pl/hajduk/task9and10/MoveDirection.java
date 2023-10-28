@@ -1,4 +1,4 @@
-package pl.hajduk.task10;
+package pl.hajduk.task9and10;
 
 import lombok.Getter;
 import lombok.Setter;

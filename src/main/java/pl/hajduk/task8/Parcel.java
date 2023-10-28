@@ -30,9 +30,6 @@ public class Parcel {
         this.isExpress = isExpress;
     }
 
-
-
-
     public boolean isExpress() {
         return isExpress;
     }

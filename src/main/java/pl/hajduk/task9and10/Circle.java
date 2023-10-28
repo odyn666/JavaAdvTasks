@@ -1,8 +1,6 @@
-package pl.hajduk.task9;
+package pl.hajduk.task9and10;
 
 import lombok.Getter;
-import pl.hajduk.task10.Movable;
-import pl.hajduk.task10.MoveDirection;
 
 //Następnie stwórz klasę Circle, która będzie
 // miała konstruktor: Circle(Point2D center, Point2D point)
@@ -41,7 +39,7 @@ public class Circle implements Movable {
 
     @Override
     public void move(MoveDirection moveDirection) {
-       center.move(moveDirection);
-       point.move(moveDirection);
+        center.move(moveDirection);
+        point.move(moveDirection);
     }
 }
