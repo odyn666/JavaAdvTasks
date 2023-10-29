@@ -7,5 +7,6 @@ public class task15Main {
 
         System.out.println(bmw.name()+" is regular " +bmw.isRegular());
         System.out.println(ferrari.name()+" is premium " +ferrari.isPremium());
+        System.out.println(ferrari.name()+" is faster than "+bmw.name()+" " +ferrari.isFasterThan(bmw));
     }
 }

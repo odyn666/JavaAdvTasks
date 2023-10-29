@@ -14,16 +14,16 @@ public enum Car {
     // że wskazany pojazd jest szybszy bądź nie od pojazdu przekazanego w argumencie.
     // W tym celu skorzystaj z metody compareTo().
 
-    FERRARI(40000, "220hp",true),
-    PORSCHE(51000, "260hp", true),
-    MERCEDES(4000, "160hp", false),
-    BMW(2000, "170hp", false),
-    OPEL(1000, "80hp", false),
-    FIAT(1000, "100hp", false),
-    TOYOTA(2000, "120hp", false);
+    FERRARI(40000, 220,true),
+    PORSCHE(51000, 260, true),
+    MERCEDES(4000, 160, false),
+    BMW(2000, 170, false),
+    OPEL(1000, 80, false),
+    FIAT(1000, 100, false),
+    TOYOTA(2000, 120, false);
 
     private final int price;
-    private final String power;
+    private final int power;
     private final boolean isPremium;
 
     public boolean isPremium() {
@@ -33,12 +33,22 @@ public enum Car {
     public boolean isRegular() {
         return !isPremium;
     }
-    Car(int price, String power, boolean isPremium) {
+    Car(int price, int power, boolean isPremium) {
         this.price = price;
         this.power = power;
         this.isPremium=isPremium;
     }
+    public boolean isFasterThan(Car car)
+    {
+        return this.getPower() > car.getPower();
+    }
 
-
-
+    @Override
+    public String toString() {
+        return "Car{" +
+                "price=" + price +
+                ", power='" + power + '\'' +
+                ", isPremium=" + isPremium +
+                '}';
+    }
 }

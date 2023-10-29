@@ -10,7 +10,7 @@ import lombok.Getter;
 //• obwód okręgu przy wywołaniu metody double getPerimeter()
 //• pole okręgu przy wywołaniu metody double getArea()
 //• (trudniejsze) trzy punkty na okręgu co 90 stopni od punktu podanego przy wywołaniu metody List getSlicePoints()
-public class Circle implements Movable {
+public class Circle implements Movable, Resizable {
     @Getter
     private final Point2D center;
     @Getter
@@ -41,5 +41,15 @@ public class Circle implements Movable {
     public void move(MoveDirection moveDirection) {
         center.move(moveDirection);
         point.move(moveDirection);
+    }
+
+
+    @Override
+    public void resize(double factor) {
+        center.setX(center.getX() * factor);
+        center.setY(center.getY() * factor);
+
+        point.setX(center.getX() * factor);
+        point.setY(center.getY() * factor);
     }
 }
