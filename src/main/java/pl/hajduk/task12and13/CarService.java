@@ -82,7 +82,7 @@ public class CarService {
     /**
      * @param localDate
      * @param comparator
-     *
+     * @Default return Equal
      * @return List<Car></>
      */
     List<Car> byManufacturerAndProdYear(LocalDate localDate, ProdYearComparator comparator) {
@@ -108,7 +108,7 @@ public class CarService {
 
 
         }
-        return carList.stream().filter(e -> e.getProdYear().getYear() < localDate.getYear()).collect(Collectors.toList());
+        return carList.stream().filter(e -> e.getProdYear().getYear() == localDate.getYear()).collect(Collectors.toList());
 
     }
 
