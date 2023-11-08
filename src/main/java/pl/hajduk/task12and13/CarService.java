@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Getter
@@ -37,7 +38,7 @@ public class CarService {
     }
 
     List<Car> carListV12Engine() {
-        return carList.stream().filter(e -> e.getEngineType() == EngineType.V12).toList();
+        return carList.stream().filter(e -> e.getEngineType().equals( EngineType.V12)).toList();
     }
 // 5. zwracanie aut wyprodukowanych przed rokiem 1999, 6. zwracanie najdroższego auta, 7. zwracanie najtańszego auta,
 // 8. zwracanie auta z co najmniej 3 producentami, 9. zwracanie listy wszystkich aut posortowanych zgodnie z przekazanym parametrem:
@@ -47,7 +48,7 @@ public class CarService {
     }
 
     List<Car> carListWithMoreThan3Manufacturers() {
-        return carList.stream().filter(e -> e.getManufacturers().size() > 3).toList();
+        return carList.stream().filter(e -> e.getManufacturers().size() >= 3).toList();
     }
 
     List<Car> carListSortBy(SortType sortType) {
